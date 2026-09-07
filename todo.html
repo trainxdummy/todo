@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Watchlist</title>
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        color: #222;
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 0 16px;
+    }
+
+    h1 { text-align: center; margin-bottom: 20px; }
+
+    form {
+        background: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    form input, form select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        margin: -6px 0 8px;
+    }
+
+    button {
+        padding: 8px 14px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .btn-add { background: #4f6df5; color: #fff; }
+    .btn-cancel { background: #ccc; }
+    .btn-edit { background: #eee; }
+    .btn-delete { background: #e5484d; color: #fff; }
+
+    .controls {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .controls input, .controls select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        flex: 1;
+    }
+
+    .movie {
+        background: #fff;
+        padding: 12px 16px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .movie-info b { font-size: 16px; }
+    .movie-info div { font-size: 13px; color: #666; margin-top: 2px; }
+
+    .status {
+        font-size: 12px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        margin-left: 6px;
+    }
+
+    .status.Watched { background: #d4f7dc; color: #1a7d33; }
+    .status.Planned { background: #fdeecb; color: #a66a00; }
+
+    .movie-actions button { margin-left: 6px; }
+
+    .empty {
+        text-align: center;
+        color: #888;
+        padding: 30px 0;
+    }
+
+    @media (max-width: 500px) {
+        .movie { flex-direction: column; align-items: flex-start; }
+        .controls { flex-direction: column; }
+    }
+</style>
+</head>
+<body>
+
+<h1>🎬 Movie Watchlist</h1>
+
+<form id="movieForm">
+    <input type="hidden" id="movieId">
+
+    <input type="text" id="title" placeholder="Movie title">
+    <div class="error" id="titleError"></div>
+
+    <input type="text" id="genre" placeholder="Genre">
+    <div class="error" id="genreError"></div>
+
+    <input type="number" id="year" placeholder="Release year">
+    <div class="error" id="yearError"></div>
+
+    <select id="status">
+        <option value="Planned">Planned</option>
+        <option value="Watched">Watched</option>
+    </select>
+
+    <button type="submit" id="submitBtn" class="btn-add">Add Movie</button>
+    <button type="button" id="cancelBtn" class="btn-cancel" style="display:none;">Cancel</button>
+</form>
+
+<div class="controls">
+    <input type="text" id="searchInput" placeholder="Search by title...">
+    <select id="filterStatus">
+        <option value="All">All</option>
+        <option value="Planned">Planned</option>
+        <option value="Watched">Watched</option>
+    </select>
+</div>
+
+<div id="movieList"></div>
+
+<script>
+    let movies = [];
+    let editId = null;
+
+    const form = document.getElementById("movieForm");
+    const movieIdInput = document.getElementById("movieId");
+    const titleInput = document.getElementById("title");
+    const genreInput = document.getElementById("genre");
+    const yearInput = document.getElementById("year");
+    const statusInput = document.getElementById("status");
+
+    const titleError = document.getElementById("titleError");
+    const genreError = document.getElementById("genreError");
+    const yearError = document.getElementById("yearError");
+
+    const submitBtn = document.getElementById("submitBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    const searchInput = document.getElementById("searchInput");
+    const filterStatus = document.getElementById("filterStatus");
+    const movieList = document.getElementById("movieList");
+
+    // ---------- Validation ----------
+    function validate() {
+        titleError.textContent = "";
+        genreError.textContent = "";
+        yearError.textContent = "";
+        let valid = true;
+
+        if (!titleInput.value.trim()) {
+            titleError.textContent = "Title is required.";
+            valid = false;
+        }
+        if (!genreInput.value.trim()) {
+            genreError.textContent = "Genre is required.";
+            valid = false;
+        }
+        const year = Number(yearInput.value);
+        const thisYear = new Date().getFullYear();
+        if (!yearInput.value || year < 1888 || year > thisYear + 5) {
+            yearError.textContent = "Enter a valid year.";
+            valid = false;
+        }
+        return valid;
+    }
+
+    // ---------- Form submit (Add / Update) ----------
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        const movieData = {
+            title: titleInput.value.trim(),
+            genre: genreInput.value.trim(),
+            year: Number(yearInput.value),
+            status: statusInput.value
+        };
+
+        if (editId) {
+            const movie = movies.find(m => m.id === editId);
+            Object.assign(movie, movieData);
+        } else {
+            movieData.id = Date.now().toString();
+            movies.push(movieData);
+        }
+
+        resetForm();
+        renderMovies();
+    });
+
+    function resetForm() {
+        form.reset();
+        movieIdInput.value = "";
+        editId = null;
+        submitBtn.textContent = "Add Movie";
+        cancelBtn.style.display = "none";
+        titleError.textContent = "";
+        genreError.textContent = "";
+        yearError.textContent = "";
+    }
+
+    cancelBtn.addEventListener("click", resetForm);
+
+    // ---------- Edit ----------
+    function editMovie(id) {
+        const movie = movies.find(m => m.id === id);
+        if (!movie) return;
+
+        editId = id;
+        titleInput.value = movie.title;
+        genreInput.value = movie.genre;
+        yearInput.value = movie.year;
+        statusInput.value = movie.status;
+
+        submitBtn.textContent = "Save Changes";
+        cancelBtn.style.display = "inline-block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // ---------- Delete ----------
+    function deleteMovie(id) {
+        const movie = movies.find(m => m.id === id);
+        const confirmed = confirm(`Delete "${movie.title}"?`);
+        if (!confirmed) return;
+
+        movies = movies.filter(m => m.id !== id);
+        if (editId === id) resetForm();
+        renderMovies();
+    }
+
+    // ---------- Toggle status ----------
+    function toggleStatus(id) {
+        const movie = movies.find(m => m.id === id);
+        movie.status = movie.status === "Watched" ? "Planned" : "Watched";
+        renderMovies();
+    }
+
+    // ---------- Search / Filter ----------
+    searchInput.addEventListener("input", renderMovies);
+    filterStatus.addEventListener("change", renderMovies);
+
+    // ---------- Render ----------
+    function renderMovies() {
+        const search = searchInput.value.trim().toLowerCase();
+        const statusFilter = filterStatus.value;
+
+        let filtered = movies.filter(m => {
+            const matchesSearch = m.title.toLowerCase().includes(search);
+            const matchesStatus = statusFilter === "All" || m.status === statusFilter;
+            return matchesSearch && matchesStatus;
+        });
+
+        movieList.innerHTML = "";
+
+        if (movies.length === 0) {
+            movieList.innerHTML = `<div class="empty">No movies yet. Add one above!</div>`;
+            return;
+        }
+
+        if (filtered.length === 0) {
+            movieList.innerHTML = `<div class="empty">No movies match your search/filter.</div>`;
+            return;
+        }
+
+        filtered.forEach(movie => {
+            const div = document.createElement("div");
+            div.className = "movie";
+            div.innerHTML = `
+                <div class="movie-info">
+                    <b>${escapeHtml(movie.title)}</b>
+                    <span class="status ${movie.status}">${movie.status}</span>
+                    <div>${escapeHtml(movie.genre)} • ${movie.year}</div>
+                </div>
+                <div class="movie-actions">
+                    <button class="btn-edit" onclick="toggleStatus('${movie.id}')">
+                        Mark as ${movie.status === "Watched" ? "Planned" : "Watched"}
+                    </button>
+                    <button class="btn-edit" onclick="editMovie('${movie.id}')">Edit</button>
+                    <button class="btn-delete" onclick="deleteMovie('${movie.id}')">Delete</button>
+                </div>
+            `;
+            movieList.appendChild(div);
+        });
+    }
+
+    function escapeHtml(str) {
+        const div = document.createElement("div");
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    renderMovies();
+</script>
+</body>
+</html>

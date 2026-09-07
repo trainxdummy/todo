@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p>Github Practice Project</p>
+        <h1>Movie Watchlist</h1>
+        <p>Practice CRUD,DOM Manipulation and the GitHub Pull Request workflow</p>
+    </header>
+    <main>
+        <section class="card">
+            <h1>Add/Update Movie</h1>
+             <form action="" id="movie-form">
+                <div class="form-grid">
+                <div class="form-eles">
+                    <lable>Movie title</lable><br>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-eles">
+                    <lable>Genre</lable><br>
+                    <input type="text" id="genre" required>
+                </div>
+                <div class="form-eles">
+                    <lable>Release year</lable><br>
+                    <input type="number" id="year" required>
+                </div>
+                <div class="form-eles">
+                    <lable>Status</lable><br>
+                    <select id="status">
+                        <option value="Planned">Planned</option>
+                        <option value="Watched">Watched</option>
+                    </select>
+                </div>
+                </div>
+             </form>
+        </section>
+        <section class="card">
+           <div class="filter">
+            <input type="text" id="search-inp" placeholder="Search movies...">
+            <select id="filter-status">
+                <option value="All statuses">All statuses</option>
+                <option value="Planned">Planned</option>
+                <option value="Watched">Watched</option>
+            </select>
+           </div>
+           <div id="movie-list">
+                <!-- Movie items will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

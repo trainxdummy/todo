@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p>Github Practice Project</p>
+      <h1>Movie Watchlist</h1>
+      <h3>
+        Practice CRUD, DOM manipulation and the Github Pull Request Workflow
+      </h3>
+
+      <div id="movie-form">
+        <h2>Add Movie</h2>
+        <form>
+          <div class="field">
+            <label for="title">Movie Title</label>
+            <div class="inp-wrapper">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Champaklaal Ki Duniya"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="genre">Genre</label>
+            <div class="inp-wrapper">
+              <input
+                type="text"
+                id="genre"
+                name="genre"
+                placeholder="Action, Horror, etc."
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="year">Release Year</label>
+            <div class="inp-wrapper">
+              <input
+                type="number"
+                id="year"
+                name="year"
+                placeholder="YYYY"
+                min="1900"
+                max="2099"
+                step="1"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="status">Status</label>
+            <div class="inp-wrapper">
+              <select name="status" id="status">
+                <option value="planned">Planned</option>
+                <option value="watched">Watched</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <button type="submit" id="btn-add">Add</button>
+            <button type="reset" id="cancel">Reset Form</button>
+          </div>
+        </form>
+      </div>
+      <div id="card-holder">
+        <div class="top">
+          <div id="search-bar">
+            <div class="field">
+              <div class="inp-wrapper">
+                <input
+                  type="text"
+                  id="searc-query"
+                  name="search-query"
+                  placeholder="Search movies..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="inp-wrapper">
+              <select name="Status" id="status">
+                <option value="all" selected>All Statuses</option>
+                <option value="planned">Planned</option>
+                <option value="watched">Watched</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="holder">
+          <!-- Dummy Card -->
+          <div class="card">
+            <div class="title">
+              <p id="title">Iron Man</p>
+              <div class="wrapper">
+                <span class="status">Watched</span>
+                <div class="btn-group">
+                  <button id="edit">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-pencil"
+                    >
+                      <path
+                        d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"
+                      />
+                      <path d="m15 5 4 4" />
+                    </svg>
+                  </button>
+                  <button id="delete">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-trash"
+                    >
+                      <path d="M10 11v6" />
+                      <path d="M14 11v6" />
+                      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                      <path d="M3 6h18" />
+                      <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              <span id="m-genre">Sci-Fi</span> - <span id="m-year">2011</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

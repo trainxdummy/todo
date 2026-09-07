@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>todo</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Movie Watchlist</h1>
+      <p>
+        Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+      </p>
+      <div class="card form-card">
+        <h2>Add/Update Movie</h2>
+        <div class="form-grid">
+            <div class="input-group">
+                <label for="movieTitle">Movie title</label>
+                <input
+                type="text"
+                id="movieTitle"
+                placeholder="Enter movie title"
+                >
+            </div>
+            <div class="input-group">
+                <label for="genre">Genre</label>
+                <input
+                type="text"
+                id="genre"
+                placeholder="Enter genre"
+                >
+        </div>
+        <div class="input-group">
+            <label for="releaseYear">releaseYear</label>
+            <input
+            type="number"
+            id="releaseYear"
+            placeholder="Enter release year"
+            >
+      </div>
+
+    </div>
+    <div class="input-group">
+                    <label for="status">Status</label>
+
+                    <select id="status">
+                        <option value="Planned">Planned</option>
+                        <option value="Watched">Watched</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+                <button id="submitBtn" class="update-btn">
+                    Add Movie
+                </button>
+
+                <button id="cancelBtn" class="cancel-btn">
+                    Cancel Edit
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Movie List -->
+        <div class="card movies-card">
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search movies..."
+                >
+
+                <select id="filterStatus">
+                    <option value="All">All statuses</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+
+            </div>
+
+            <div id="movieList"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
+
+
+

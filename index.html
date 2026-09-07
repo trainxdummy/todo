@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>🎬 Movie Watchlist</h1>
+            <p>Keep track of movies you want to watch and have watched.</p>
+        </header>
+
+
+        <!-- Movie Form -->
+        <section class="movie-form-section">
+
+            <h2>Add Movie</h2>
+
+            <form id="movieForm">
+
+                <div class="form-group">
+                    <label for="movieTitle">Movie Title</label>
+                    <input
+                        type="text"
+                        id="movieTitle"
+                        placeholder="Enter movie title"
+                        required
+                    >
+                    <small class="error" id="titleError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="movieGenre">Genre</label>
+                    <input
+                        type="text"
+                        id="movieGenre"
+                        placeholder="e.g. Action, Comedy, Sci-Fi"
+                        required
+                    >
+                    <small class="error" id="genreError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="releaseYear">Release Year</label>
+                    <input
+                        type="number"
+                        id="releaseYear"
+                        placeholder="e.g. 2024"
+                        min="1888"
+                        required
+                    >
+                    <small class="error" id="yearError"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="movieStatus">Status</label>
+
+                    <select id="movieStatus" required>
+                        <option value="">Select status</option>
+                        <option value="Planned">Planned</option>
+                        <option value="Watched">Watched</option>
+                    </select>
+
+                    <small class="error" id="statusError"></small>
+                </div>
+
+
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn">
+                        Add Movie
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn"
+                        hidden
+                    >
+                        Cancel
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- Search & Filter -->
+        <section class="controls">
+
+            <div class="search-box">
+                <label for="searchInput">Search Movies</label>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by movie title..."
+                >
+            </div>
+
+
+            <div class="filter-box">
+                <label for="statusFilter">Filter by Status</label>
+
+                <select id="statusFilter">
+                    <option value="All">All Movies</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+            </div>
+
+        </section>
+
+
+        <!-- Movie List -->
+        <section class="movie-section">
+
+            <div class="section-heading">
+                <h2>My Movies</h2>
+                <span id="movieCount">0 Movies</span>
+            </div>
+
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">🎬</div>
+
+                <h3>No movies found</h3>
+
+                <p>
+                    Your watchlist is empty.
+                    Add your first movie to get started!
+                </p>
+            </div>
+
+
+            <!-- Movies will be inserted here by JavaScript -->
+            <div id="movieList" class="movie-list"></div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

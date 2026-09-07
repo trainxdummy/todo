@@ -1,0 +1,79 @@
+*{
+    padding:0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p.githead{
+    color: blue;
+    font-family: monospace;
+    font-size: 20px;
+}
+p.pra{
+    color: grey;
+}
+body{
+    background-color: azure;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+.entry{
+    background-color: white;
+    border-radius: 4px;
+    padding: 25px;
+}
+.titles{
+    font-size:12px ;
+    color:black;
+    font-weight: 600;
+}
+.inp{
+    width: 300px;
+    height: 25px;
+    padding:0px 10px;
+    border-radius: 8px;
+    border: 1px solid ;
+    border-color: rgb(195, 189, 189);
+}
+.update{
+    border: 0px solid ;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    background-color: rgb(91, 91, 226);
+    padding: 5px;
+}
+.cont{
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+}
+.blc{
+    display: flex;
+    gap: 20px;
+
+}
+.entry{
+    display: flex;
+    flex-direction: column;
+}
+.kkk{
+    padding:15px 0px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+#Status{
+    width: 320px;
+    height: 25px;
+    padding:0px 10px;
+    border-radius: 8px;
+    border: 1px solid grey;
+}
+#Status.option{
+    background-color: black;
+    height:10px;
+    padding: 10px;
+}

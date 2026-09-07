@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="content">
+        <p class="project-name">GITHUB PRACTICE PROJECT</p>
+
+        <h1>Movie Watchlist</h1>
+
+        <p class="intro">
+          A simple movie watchlist made using HTML, CSS and JavaScript.
+        </p>
+
+        <!-- Add Movie -->
+
+        <div class="card">
+          <h2>Add / Update Movie</h2>
+
+          <form id="todoForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Movie Name</label>
+
+                <input
+                  type="text"
+                  id="taskInput"
+                  placeholder="Enter movie name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Genre</label>
+
+                <input
+                  type="text"
+                  id="categoryInput"
+                  placeholder="Enter genre"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Priority</label>
+
+                <select id="priorityInput">
+                  <option value="Low">Low</option>
+                  <option value="Medium" selected>Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Status</label>
+
+                <select id="statusInput">
+                  <option value="Pending">Want to Watch</option>
+                  <option value="Completed">Watched</option>
+                </select>
+              </div>
+            </div>
+
+            <p id="error"></p>
+
+            <button type="submit" id="addButton">Add Movie</button>
+
+            <button type="button" id="cancelButton" class="cancel">
+              Cancel
+            </button>
+          </form>
+        </div>
+
+        <!-- Search and Filter -->
+
+        <div class="card">
+          <div class="search-row">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search movies..."
+            />
+
+            <select id="filterInput">
+              <option value="All">All movies</option>
+              <option value="Pending">Want to Watch</option>
+              <option value="Completed">Watched</option>
+            </select>
+          </div>
+
+          <div id="taskList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

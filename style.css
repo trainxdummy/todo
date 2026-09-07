@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1d1d1d;
+}
+
+
+/* Page */
+
+.page {
+    width: 95%;
+    max-width: 1000px;
+    min-height: 600px;
+    margin: 28px auto;
+    padding: 35px;
+    background: whitesmoke;
+}
+
+.content {
+    width: 585px;
+    margin: auto;
+}
+
+
+/* Heading */
+
+.project-name {
+    font-size: 10px;
+    font-weight: bold;
+    color: #376cf0;
+    margin-bottom: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 34px;
+    color: #172033;
+    font-weight: bolder;
+}
+
+.intro {
+    margin: 0 0 25px;
+    font-size: 12px;
+    color: gray;
+}
+
+
+/* Card */
+
+.card {
+    background: white;
+    border: 1px solid #e1e5e8;
+    border-radius: 9px;
+    padding: 15px;
+    margin-bottom: 13px;
+}
+
+.card h2 {
+    margin: 0 0 17px;
+    font-size: 16px;
+    color: #273244;
+}
+
+
+/* Form */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    height: 28px;
+    padding: 5px 8px;
+    border: 1px solid #d7dce1;
+    border-radius: 5px;
+    font-size: 11px;
+    outline: none;
+    background: white;
+}
+
+input:focus,
+select:focus {
+    border-color: #376cf0;
+}
+
+
+/* Error */
+
+#error {
+    color: red;
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+
+/* Buttons */
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 7px 11px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#addButton {
+    background: #376cf0;
+    color: white;
+}
+
+.cancel {
+    background: lightgray;
+    color: #555;
+    margin-left: 5px;
+    display: none;
+}
+
+
+/* Search */
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+
+/* Tasks */
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e1e5e8;
+    border-radius: 7px;
+    padding: 11px;
+    margin-top: 7px;
+}
+
+.task-name {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.task-category {
+    font-size: 9px;
+    color: gray;
+}
+
+.task-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+
+/* Status */
+
+.status {
+    font-size: 8px;
+    padding: 3px 6px;
+    border-radius: 3px;
+}
+
+.pending {
+    background: #fff0c7;
+    color: darkgoldenrod;
+}
+
+.completed {
+    background: #dff3e4;
+    color: green;
+}
+
+
+/* Task buttons */
+
+.edit-button {
+    background: #376cf0;
+    color: white;
+    padding: 5px 8px;
+}
+
+.delete-button {
+    background: mistyrose;
+    color: red;
+    padding: 5px 8px;
+    margin-left: 3px;
+}
+
+
+/* No tasks */
+
+.no-task {
+    text-align: center;
+    color: gray;
+    font-size: 11px;
+    padding: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .page {
+        width: 100%;
+        margin: 0;
+        padding: 25px 15px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .form-row,
+    .search-row {
+        grid-template-columns: 1fr;
+    }
+
+    .task {
+        align-items: flex-start;
+    }
+}

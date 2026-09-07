@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Todo List</title>
+    <title>Movie Watchlist</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,34 +13,38 @@
   <body>
     <div class="page">
       <div class="content">
-        <p class="project-name">JAVASCRIPT PRACTICE PROJECT</p>
+        <p class="project-name">GITHUB PRACTICE PROJECT</p>
 
         <h1>Movie Watchlist</h1>
 
         <p class="intro">
-          A simple todo list made using HTML, CSS and JavaScript.
+          A simple movie watchlist made using HTML, CSS and JavaScript.
         </p>
 
-        <!-- Add Task -->
+        <!-- Add Movie -->
 
         <div class="card">
-          <h2>Add / Update Task</h2>
+          <h2>Add / Update Movie</h2>
 
           <form id="todoForm">
             <div class="form-row">
               <div class="form-group">
-                <label>Task</label>
+                <label>Movie Name</label>
 
-                <input type="text" id="taskInput" placeholder="Enter task" />
+                <input
+                  type="text"
+                  id="taskInput"
+                  placeholder="Enter movie name"
+                />
               </div>
 
               <div class="form-group">
-                <label>Category</label>
+                <label>Genre</label>
 
                 <input
                   type="text"
                   id="categoryInput"
-                  placeholder="Enter category"
+                  placeholder="Enter genre"
                 />
               </div>
             </div>
@@ -50,9 +55,7 @@
 
                 <select id="priorityInput">
                   <option value="Low">Low</option>
-
                   <option value="Medium" selected>Medium</option>
-
                   <option value="High">High</option>
                 </select>
               </div>
@@ -61,16 +64,15 @@
                 <label>Status</label>
 
                 <select id="statusInput">
-                  <option value="Pending">Pending</option>
-
-                  <option value="Completed">Completed</option>
+                  <option value="Pending">Want to Watch</option>
+                  <option value="Completed">Watched</option>
                 </select>
               </div>
             </div>
 
             <p id="error"></p>
 
-            <button type="submit" id="addButton">Add Task</button>
+            <button type="submit" id="addButton">Add Movie</button>
 
             <button type="button" id="cancelButton" class="cancel">
               Cancel
@@ -80,16 +82,18 @@
 
         <!-- Search and Filter -->
 
-        <div class="card tasks-card">
+        <div class="card">
           <div class="search-row">
-            <input type="text" id="searchInput" placeholder="Search tasks..." />
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search movies..."
+            />
 
             <select id="filterInput">
-              <option value="All">All statuses</option>
-
-              <option value="Pending">Pending</option>
-
-              <option value="Completed">Completed</option>
+              <option value="All">All movies</option>
+              <option value="Pending">Want to Watch</option>
+              <option value="Completed">Watched</option>
             </select>
           </div>
 
@@ -101,3 +105,4 @@
     <script src="script.js"></script>
   </body>
 </html>
+

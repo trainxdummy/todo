@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="heading">
+            <p class="small-heading">GITHUB PRACTICE PROJECT</p>
+            <h1>Movie Watchlist</h1>
+            <p class="description">
+                Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+            </p>
+        </div>
+
+        <div class="movie-form-box">
+
+            <h2 id="formTitle">Add Movie</h2>
+
+            <form id="movieForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="movieTitle">Movie title</label>
+                        <input type="text" id="movieTitle" placeholder="Enter movie title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" placeholder="Enter genre" required>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="year">Release year</label>
+                        <input type="number" id="year" placeholder="Enter release year" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="Planned">Planned</option>
+                            <option value="Watched">Watched</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="update-button" id="submitButton">
+                        Add Movie
+                    </button>
+
+                    <button type="button" class="cancel-button" id="cancelButton">
+                        Cancel Edit
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="movie-list-box">
+
+            <div class="search-row">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search movies..."
+                >
+
+                <select id="filterStatus">
+                    <option value="All">All statuses</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+
+            </div>
+
+            <div id="movieList"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

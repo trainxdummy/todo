@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f7f9;
+    color: #111827;
+    padding-top: 30px;
+    padding-left: 300px;
+}
+.cont{
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: 500px;
+}
+header{
+    margin-bottom: 30px;
+}
+#blue-text{
+    color: blue;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+header h1{
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: black;
+}
+header p{
+    color: gray;
+}
+
+.card{
+    background-color: white;
+    width:800px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.form-eles{
+    display: flex;
+    flex-direction: column;
+    width:48%;
+    margin-right: 2%;
+    margin-bottom: 15px;
+}
+
+input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+select{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.form-actions{
+    margin-top: 20px;
+}
+.btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-primary{
+    background-color: #007bff;
+    color: white;
+}
+.btn-secondary{
+    background-color: #eeeeee;
+    color: black;
+}
+.hidden{
+    display :flex;
+    margin-bottom: 20px;
+}
+#search-input{
+    width:70%;
+    margin-right: 4%;
+}
+#filter-status{
+    width: 25%;
+}
+
+.movie-item{
+    display: flex;
+    justify-content: space-between;
+    padding:15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+.movie-meta {
+    color: gray;
+    font-size: 14px;
+}
+
+.movie-actions {
+    text-align: right;
+}
+
+/* The little Watched/Planned tag */
+.badge {
+    background-color: #eff6ff;
+    color: blue;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.btn-delete {
+    background-color: #ffdddd;
+    color: red;
+}
+
+/* Make it look okay on small phone screens */
+@media (max-width: 600px) {
+    .form-group {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+
+    #search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #filter-status {
+        width: 100%;
+    }
+}

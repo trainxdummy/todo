@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Movie Watchlist </title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <!-- Header -->
+        <header class="header">
+            <p class="project-label"> GITHUB PRACTICE PROJECT </p>
+            <h1> Movie Watchlist </h1>
+            <p class="subtitle"> Practice CRUD, DOM manipulation and the GitHub Pull Request workflow. </p>
+        </header>
+
+        <!-- Add / Update Form -->
+        <section class="form-card">
+            <h2>Add / Update Movie</h2>
+            <form id="movieForm">
+                <div class="form-grid">
+
+                    <!-- Movie Title -->
+                    <div class="form-control">
+                        <label for="title">Movie title</label>
+                        <input type="text" id="title" placeholder="Enter movie title">
+                        <small id="titleError"></small>
+                    </div>
+                    <div class="form-control">
+                        <label for="genre">Genre</label>
+                        <input type="text" id="genre" placeholder="Enter genre">
+                        <small id="genreError"></small>
+                    </div>
+
+                    <!-- Release Year -->
+                    <div class="form-control">
+                        <label for="year">Release year</label>
+                        <input type="number" id="year" placeholder="Enter release year">
+                        <small id="yearError"></small>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="form-control">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="Planned"> Planned </option>
+                            <option value="Watched"> Watched </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn" class="update-btn"> Add Movie </button>
+                    <button type="button" id="cancelBtn" class="cancel-btn" hidden> Cancel Edit </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Movie List Section -->
+        <section class="list-card">
+            <!-- Search + Filter -->
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+                <select id="filterStatus">
+                    <option value="All"> All statuses </option>
+                    <option value="Planned"> Planned </option>
+                    <option value="Watched"> Watched </option>
+                </select>
+            </div>
+
+            <!-- Movies -->
+            <div id="movieList"></div>
+
+            <!-- Empty State -->
+            <div id="emptyMessage" class="empty-message">
+                <h3>No movies found</h3>
+                <p> Add a movie to your watchlist. </p>
+            </div>
+        </section>
+    </main>
+    <script src="Vanilla.js"></script>
+</body>
+</html>

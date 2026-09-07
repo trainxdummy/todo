@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f7fb;
+
+    color: #172033;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 810px;
+
+    margin: 0 auto;
+
+    padding: 4px 20px 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    margin-bottom: 36px;
+}
+
+
+.project-label {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #3564dc;
+
+    margin-bottom: 12px;
+}
+
+
+.header h1 {
+    font-size: 44px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    margin-bottom: 14px;
+
+    color: #182237;
+}
+
+
+.subtitle {
+    font-size: 14px;
+
+    color: #68758a;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.form-card {
+    background: white;
+
+    border: 1px solid #dfe5ed;
+
+    border-radius: 14px;
+
+    padding: 32px 17px 18px;
+
+    margin-bottom: 17px;
+
+    box-shadow: 0 8px 25px rgba(30, 50, 80, 0.06);
+}
+
+
+.form-card h2 {
+    font-size: 21px;
+
+    margin-bottom: 17px;
+
+    color: #172033;
+}
+
+
+/* =========================
+   FORM GRID
+========================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 12px;
+
+    row-gap: 10px;
+}
+
+
+.form-control label {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+    color: #263246;
+}
+
+
+.form-control input,
+.form-control select {
+    width: 100%;
+
+    height: 35px;
+
+    padding: 0 11px;
+
+    border: 1px solid #d6dce5;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #172033;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+
+.form-control input:focus,
+.form-control select:focus {
+    border-color: #3b6df5;
+
+    box-shadow: 0 0 0 2px rgba(59, 109, 245, 0.1);
+}
+
+
+.form-control small {
+    display: block;
+
+    color: #dc3545;
+
+    font-size: 11px;
+
+    min-height: 14px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-buttons {
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 1px;
+}
+
+
+.form-buttons button {
+    height: 32px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 0 13px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.update-btn {
+    background: #3767e8;
+
+    color: white;
+}
+
+
+.update-btn:hover {
+    background: #2858d8;
+}
+
+
+.cancel-btn {
+    background: #edf0f4;
+
+    color: #39465a;
+}
+
+
+.cancel-btn:hover {
+    background: #e1e5eb;
+}
+
+
+/* =========================
+   LIST CARD
+========================= */
+
+.list-card {
+    background: white;
+
+    border: 1px solid #dfe5ed;
+
+    border-radius: 14px;
+
+    padding: 18px 17px;
+
+    box-shadow: 0 8px 25px rgba(30, 50, 80, 0.06);
+}
+
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+.controls {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 9px;
+
+    margin-bottom: 13px;
+}
+
+
+.controls input,
+.controls select {
+    height: 36px;
+
+    width: 100%;
+
+    padding: 0 11px;
+
+    border: 1px solid #dce2e9;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: white;
+
+    color: #343d4d;
+
+    font-size: 13px;
+}
+
+
+.controls input:focus,
+.controls select:focus {
+    border-color: #3b6df5;
+}
+
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.movie-card {
+    min-height: 74px;
+
+    border: 1px solid #e0e4ea;
+
+    border-radius: 10px;
+
+    padding: 13px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+
+    transition: box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+
+.movie-card:hover {
+    box-shadow: 0 4px 12px rgba(30, 50, 80, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+.movie-details {
+    min-width: 0;
+}
+
+
+.movie-title {
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color: #182237;
+
+    margin-bottom: 4px;
+}
+
+
+.movie-meta {
+    font-size: 11px;
+
+    color: #68758a;
+}
+
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.movie-actions {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 7px;
+
+    margin-left: 15px;
+}
+
+
+.status {
+    display: inline-block;
+
+    padding: 3px 8px;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.status.watched {
+    background: #edf2ff;
+
+    color: #38569c;
+}
+
+
+.status.planned {
+    background: #edf2ff;
+
+    color: #38569c;
+}
+
+
+.card-buttons {
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.card-buttons button {
+    border: none;
+
+    border-radius: 7px;
+
+    height: 25px;
+
+    padding: 0 10px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.edit-btn {
+    background: #3767e8;
+
+    color: white;
+}
+
+
+.edit-btn:hover {
+    background: #2858d8;
+}
+
+
+.delete-btn {
+    background: #fff0f1;
+
+    color: #cf454d;
+}
+
+
+.delete-btn:hover {
+    background: #ffe0e2;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-message {
+    display: none;
+
+    text-align: center;
+
+    padding: 35px 10px;
+
+    color: #7a8495;
+}
+
+
+.empty-message h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+
+.empty-message p {
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 4px 14px 20px;
+    }
+
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+
+    .header h1 {
+        font-size: 36px;
+    }
+
+
+    .form-card {
+        padding: 24px 14px 16px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+
+    .movie-card {
+        align-items: flex-start;
+    }
+
+
+    .movie-actions {
+        flex-shrink: 0;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .movie-card {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .movie-actions {
+        width: 100%;
+
+        align-items: flex-start;
+
+        margin-left: 0;
+    }
+
+}

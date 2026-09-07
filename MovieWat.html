@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="MovieWat.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <p class="small-title">GITHUB PRACTICE PROJECT</p>
+            <h1>Movie Watchlist</h1>
+            <p class="subtitle">
+                Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+            </p>
+        </div>
+
+        <div class="card">
+
+            <h2>Add / Update Movie</h2>
+            
+
+            <form id="movieForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="movieTitle">Movie title</label>
+                        <input
+                            type="text"
+                            id="movieTitle"
+                            placeholder="Enter movie title"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input
+                            type="text"
+                            id="genre"
+                            placeholder="Enter genre"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year">Release year</label>
+                        <input
+                            type="number"
+                            id="year"
+                            placeholder="Enter year"
+                            min="1900"
+                            max="2100"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Status</label>
+
+                        <select id="status">
+                            <option value="Planned">Planned</option>
+                            <option value="Watched">Watched</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="buttons">
+
+                    <button
+                        type="submit"
+                        id="submitBtn"
+                        class="update-btn"
+                    >
+                        Add Movie
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn"
+                        onclick="cancelEdit()"
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="card movies-card">
+
+            <div class="filters">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search movies..."
+                    oninput="displayMovies()"
+                >
+
+                <select>
+                    id="filterStatus"
+                    onchange="displayMovies()"
+                >
+                    <option value="All">All statuses</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+
+            </div>
+
+            <div id="movieList"></div>
+
+        </div>
+
+    </div>
+
+    <script src="MovieWat.js"></script>
+
+</body>
+</html>

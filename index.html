@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .GITHUB{
+            color: blue;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container{
+            background-color: aliceblue;
+            width: 500px;
+            padding: 20px;
+            margin: 20px;
+        }
+        .About{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .button{
+            display: flex;
+            margin: 20px;
+        }
+        
+
+        
+    </style>
+    
+</head>
+<body>
+    <div class="GITHUB">GITHUB PRACTICE PROJECT</div>
+    <h1>Movie Watchlist</h1>
+    <div class="Practice">Practice CRUD,DOM manipulation and the GITHUB Pull Request workflow</div>
+    <div class="container">
+        <div class="AboutMovie"><h2>Add / Update Movie</h2>  </div>
+       
+        <div class="About">
+            <div class="Title">
+                 <h6>Movie title</h6>
+            <input type="text">
+            </div>
+            <div class="Genre">
+                <h6>Genre</h6>
+            <input type="text">
+            </div>
+            <div class="relese">
+                <h6>Relese Year</h6>
+            <input type="text">   
+            </div>
+            <div class="Status">
+                <h6>Status</h6>
+                <select name="" id="">
+                    <option value="planned">planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+
+            </div>
+            
+        
+
+
+        </div>
+        <div class="button">
+        <div class="butt">
+             <button>Update Movie</button>
+        </div>
+       <div class="on"> <button>Cancel Edit</button></div>
+       </div></div>
+
+</body>
+</html>

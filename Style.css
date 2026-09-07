@@ -85,7 +85,6 @@ button {
   margin-left: 5px;
 }
 
-/* Search and filter */
 .box2 input {
   width: 65%;
 }
@@ -115,7 +114,6 @@ button {
   font-size: 14px;
 }
 
-/* Right side */
 .movie-actions {
   text-align: right;
 }

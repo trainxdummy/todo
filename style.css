@@ -1,0 +1,195 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+}
+
+.left-bar {
+    width: 20%;
+    height: 100vh;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.left-bar h1 {
+    color: red;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.left-bar input {
+    width: 80%;
+    height: 40px;
+    margin: 20px 10%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    outline: none;
+}
+
+.left-bar input::placeholder {
+    color: #aaa;
+}
+
+
+.home,
+.history {
+    width: 80%;
+    margin-left: 20%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: space-between;
+}
+
+
+.home {
+    height: 200px;
+    padding-top: 30px;
+}
+
+.home img,
+.history img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    background-color: grey;
+}
+
+.home h2,
+.history h2 {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.history {
+    height: 400px;
+    padding-top: 30px;
+}
+.watchlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.watchlist-btn {
+    width: 150px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+body {
+  background: black;
+  color: white;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+.movie-card {
+  width: 280px;
+  background: black;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+
+.poster-container {
+  position: relative;
+  aspect-ratio: 2 / 3;
+}
+
+.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.add-btn {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 32px;
+  height: 42px;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+
+
+.branding-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding-top: 40px;
+}
+
+.overlay-logo {
+  max-width: 65%;
+}
+
+
+.movie-info {
+  padding: 16px;
+}
+
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rating-icon {
+  background: green;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.rating-score {
+  margin: 0;
+  color: grey;
+}
+
+.rating-score strong {
+  color: white;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.year {
+  color: grey;
+  font-size: 18px;
+}
+

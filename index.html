@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="left-bar">
+      <h1>Watchlist</h1>
+
+      <input type="text" id="movie-input" placeholder="Search..........." />
+
+      <div class="home">
+        <img
+          src="home-icon-silhouette-svgrepo-com.svg"
+          alt="My Website Logo"
+          width="300"
+          height="200"
+        />
+
+        <h2>Home</h2>
+      </div>
+
+      <div class="history">
+        <img
+          src="history-svgrepo-com.svg"
+          alt="My Website Logo"
+          width="300"
+          height="200"
+        />
+
+        <h2>History</h2>
+        <div class="watchlist">
+            <button class="watchlist-btn">Watchlist</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <div class="poster-container">
+        <img
+          src="https://substackcdn.com/image/fetch/$s_!R1hV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F017e30a1-299c-4d46-840f-0fd871c59db0_1440x1801.jpeg"
+          alt="KANTARA"
+          class="poster-img"
+        />
+
+        <button class="add-btn" title="Add to Watchlist">+</button>
+      </div>
+
+      <div class="movie-info">
+        <div class="rating-row">
+          <span class="rating-icon">😎</span>
+          <p class="rating-score"><strong>83</strong>/100</p>
+        </div>
+
+        <h2 class="title">KANTARA:A Legend</h2>
+        <span class="year">(2025)</span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

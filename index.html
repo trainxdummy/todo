@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Movie Watchlist</h1>
+      <p>Practice CRUD DOM manipulation and the GitHub pull request Workflow</p>
+      <div class="box1">
+        <h2>Add/Update Movie</h2>
+
+        <label for="movieFile">Movie File</label>
+        <input type="text" placeholder="Enter Movie File Name" id="movieFile" />
+
+        <label for="movieGenre">Genre</label>
+        <input type="text" placeholder="Enter Movie Genre" id="movieGenre" />
+
+        <label for="movieRating">Rating</label>
+        <input type="text" placeholder="Enter Movie Rating" id="movieRating" />
+
+        <label for="movieYear">Release Year</label>
+        <input
+          type="text"
+          placeholder="Enter Movie Release Year"
+          id="movieYear"
+        />
+
+        <label for="movieStatusSelect">Status</label>
+
+        <select id="movieStatusSelect">
+          <option value="Planned">Planned</option>
+          <option value="Watched">Watched</option>
+        </select>
+
+        <button id="UpdateMovie">Update Movie</button>
+        <button id="cancelEdit">Cancel Edit</button>
+      </div>
+
+      <div class="box2">
+        <input type="text" placeholder="Search Movies..." id="searchMovie" />
+        <select id="Allstatus">
+          <option value="All">All statuses</option>
+          <option value="Planned">Planned</option>
+          <option value="Watched">Watched</option>
+        </select>
+        <div class="Interstellar">
+          <div class="movie-info">
+            <h3>Interstellar</h3>
+            <p>Sci-Fi · 2014</p>
+          </div>
+          <div class="movie-actions">
+            <span class="status">Watched</span>
+            <div class="buttons">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="TheDarkKnight">
+          <div class="movie-info">
+            <h3>The Dark Knight</h3>
+            <p>Action · 2018</p>
+          </div>
+
+          <div class="movie-actions">
+            <span class="status">Planned</span>
+
+            <div class="buttons">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

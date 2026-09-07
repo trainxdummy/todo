@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <p class="project">GITHUB PRACTICE PROJECT</p>
+
+        <h1>Movie Watchlist</h1>
+
+        <p class="subtitle">
+            Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+        </p>
+
+
+        <div class="box">
+
+            <h2 id="heading">Add Movie</h2>
+
+            <div class="form">
+
+                <div>
+                    <label>Movie title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Movie title"
+                    >
+                </div>
+
+                <div>
+                    <label>Genre</label>
+                    <input
+                        type="text"
+                        id="genre"
+                        placeholder="Genre"
+                    >
+                </div>
+
+                <div>
+                    <label>Release year</label>
+                    <input
+                        type="number"
+                        id="year"
+                        placeholder="Year"
+                    >
+                </div>
+
+                <div>
+                    <label>Status</label>
+
+                    <select id="status">
+                        <option value="Planned">Planned</option>
+                        <option value="Watched">Watched</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <button id="addButton" onclick="addMovie()">
+                Add Movie
+            </button>
+
+            <button
+                id="cancelButton"
+                onclick="cancelEdit()"
+            >
+                Cancel Edit
+            </button>
+
+        </div>
+
+
+        <!-- Movie List -->
+
+        <div class="box">
+
+            <div class="search">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search movies..."
+                    onkeyup="showMovies()"
+                >
+
+                <select
+                    id="filter"
+                    onchange="showMovies()"
+                >
+                    <option value="All">All statuses</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+
+            </div>
+
+
+            <div id="movieList"></div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

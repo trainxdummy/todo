@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🍿 Movie Watchlist</h1>
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="stats-container">
+            <div class="stat-box">Total: <span id="stat-total">0</span></div>
+            <div class="stat-box">Watched: <span id="stat-watched">0</span></div>
+            <div class="stat-box">Planned: <span id="stat-planned">0</span></div>
+        </section>
+
+        <section class="form-section">
+            <h2 id="form-title">Add a Movie</h2>
+            <form id="movie-form">
+                <input type="text" id="title" placeholder="Movie Title" required>
+                <input type="text" id="genre" placeholder="Genre (e.g., Sci-Fi, Drama)" required>
+                <input type="number" id="year" placeholder="Release Year" min="1888" max="2100" required>
+                <select id="status" required>
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="Planned">Planned</option>
+                    <option value="Watched">Watched</option>
+                </select>
+                <button type="submit" id="submit-btn">Add Movie</button>
+                <button type="button" id="cancel-edit" class="hidden">Cancel</button>
+            </form>
+        </section>
+
+        <section class="controls-section">
+            <input type="text" id="search-input" placeholder="Search by title...">
+            <select id="filter-status">
+                <option value="All">All Movies</option>
+                <option value="Planned">Planned</option>
+                <option value="Watched">Watched</option>
+            </select>
+        </section>
+
+        <section id="movie-container" class="movie-grid">
+            </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

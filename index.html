@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <div class="content">
+        <p class="project-name">JAVASCRIPT PRACTICE PROJECT</p>
+
+        <h1>Movie Watchlist</h1>
+
+        <p class="intro">
+          A simple todo list made using HTML, CSS and JavaScript.
+        </p>
+
+        <!-- Add Task -->
+
+        <div class="card">
+          <h2>Add / Update Task</h2>
+
+          <form id="todoForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Task</label>
+
+                <input type="text" id="taskInput" placeholder="Enter task" />
+              </div>
+
+              <div class="form-group">
+                <label>Category</label>
+
+                <input
+                  type="text"
+                  id="categoryInput"
+                  placeholder="Enter category"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Priority</label>
+
+                <select id="priorityInput">
+                  <option value="Low">Low</option>
+
+                  <option value="Medium" selected>Medium</option>
+
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Status</label>
+
+                <select id="statusInput">
+                  <option value="Pending">Pending</option>
+
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+
+            <p id="error"></p>
+
+            <button type="submit" id="addButton">Add Task</button>
+
+            <button type="button" id="cancelButton" class="cancel">
+              Cancel
+            </button>
+          </form>
+        </div>
+
+        <!-- Search and Filter -->
+
+        <div class="card tasks-card">
+          <div class="search-row">
+            <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+            <select id="filterInput">
+              <option value="All">All statuses</option>
+
+              <option value="Pending">Pending</option>
+
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+
+          <div id="taskList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

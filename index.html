@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Watchlist</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <p class="eyebrow">GITHUB PRACTICE PROJECT</p>
+
+            <h1>Movie Watchlist</h1>
+
+            <p class="subtitle">
+                Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+            </p>
+        </header>
+
+
+        <!-- ADD / UPDATE FORM -->
+        <section class="form-section">
+
+            <h2>Add / Update Movie</h2>
+
+            <form id="movieForm">
+
+                <div class="form-grid">
+
+                    <!-- Movie Title -->
+                    <div class="form-group">
+                        <label for="title">Movie title</label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Enter movie title"
+                        >
+                    </div>
+
+
+                    <!-- Genre -->
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+
+                        <input
+                            type="text"
+                            id="genre"
+                            placeholder="Enter genre"
+                        >
+                    </div>
+
+
+                    <!-- Release Year -->
+                    <div class="form-group">
+                        <label for="year">Release year</label>
+
+                        <input
+                            type="number"
+                            id="year"
+                            placeholder="Enter release year"
+                        >
+                    </div>
+
+
+                    <!-- Status -->
+                    <div class="form-group">
+                        <label for="status">Status</label>
+
+                        <select id="status">
+
+                            <option value="Planned">
+                                Planned
+                            </option>
+
+                            <option value="Watched">
+                                Watched
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- FORM BUTTONS -->
+                <div class="form-buttons">
+
+                    <button
+                        type="submit"
+                        id="submitBtn"
+                        class="btn primary-btn"
+                    >
+                        Add Movie
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="btn cancel-btn"
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- SEARCH + FILTER -->
+        <section class="movies-section">
+
+            <div class="controls">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search movies..."
+                >
+
+                <select id="filterStatus">
+
+                    <option value="all">
+                        All statuses
+                    </option>
+
+                    <option value="Planned">
+                        Planned
+                    </option>
+
+                    <option value="Watched">
+                        Watched
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div
+                id="emptyState"
+                class="empty-state"
+            >
+                No movies found.
+            </div>
+
+
+            <!-- MOVIE LIST -->
+            <div
+                id="movieList"
+                class="movie-list"
+            >
+
+                <!-- JavaScript will add movie cards here -->
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

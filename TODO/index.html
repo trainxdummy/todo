@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE-DIRECTORY</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="all">
+    <div class="main">
+    <div class="header">
+        <p id="yos">Yokusso, Welcome to Movie List</p>
+        <p id="title">Movie Watch List</p>
+    </div>
+    <div class="hero">
+        <div class="form1">
+            <p>Add a Movie Here</p>
+            <form action="" id="hola">
+                <div class="field">
+                <label for="mName">Movie Title</label>
+                <input type="text" id="mName">
+                </div>
+                <div class="field">
+                <label for="Genre">Genre</label>
+                <input type="text" id="Genre">
+                </div>
+                <div class="field">
+                <label for="rYear">Release Year</label>
+                <input type="text" id="rYear">
+                </div>
+                <div class="field">
+                <label for="status">Status</label>
+                <select name="status" id="">
+                    <!-- <option value=""></option> -->
+                    <option value="">Watched</option>
+                    <option value="">Planning to Watched</option>
+                </select>
+                </div>
+            </form>
+            <button type="submit">submit</button>
+            <button type="clear">Clear</button>
+        </div>
+        </div>
+
+        <div class="list">
+            <p id="ls">Your Movie List here</p>
+            <div class="search">
+                <input type="text" placeholder="Search here">
+                <button id="search">Search</button>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

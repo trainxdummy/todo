@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Watchlist</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Inter font from Google Fonts for clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <span class="sub-title">GITHUB PRACTICE PROJECT</span>
+      <h1 class="main-title">Movie Watchlist</h1>
+      <p class="description">Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.</p>
+    </header>
+
+    <!-- Form Section: Add / Update Movie -->
+    <section class="card form-card">
+      <h2 class="card-title">Add / Update Movie</h2>
+      <form class="movie-form">
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <label for="title">Movie title</label>
+            <input type="text" id="title" value="The Dark Knight" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" value="Action" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="year">Release year</label>
+            <input type="number" id="year" value="2008">
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status</label>
+            <div class="select-wrapper">
+              <select id="status">
+                <option value="Planned" selected>Planned</option>
+                <option value="Watched">Watched</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Update Movie</button>
+          <button type="button" class="btn btn-secondary">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Watchlist & Filter Section -->
+    <section class="card list-card">
+      <div class="filter-bar">
+        <input type="text" class="search-input" placeholder="Search movies...">
+        <select class="filter-select">
+          <option value="all">All statuses</option>
+          <option value="planned">Planned</option>
+          <option value="watched">Watched</option>
+        </select>
+      </div>
+
+      <div class="movie-list">
+        
+        <!-- Movie Item 1 -->
+        <div class="movie-item">
+          <div class="movie-info">
+            <h3 class="movie-title">Interstellar</h3>
+            <p class="movie-meta">Sci-Fi · 2014</p>
+          </div>
+          <div class="movie-actions">
+            <span class="badge badge-watched">Watched</span>
+            <div class="btn-group">
+              <button class="btn-action btn-edit">Edit</button>
+              <button class="btn-action btn-delete">Delete</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Movie Item 2 -->
+        <div class="movie-item">
+          <div class="movie-info">
+            <h3 class="movie-title">The Dark Knight</h3>
+            <p class="movie-meta">Action · 2008</p>
+          </div>
+          <div class="movie-actions">
+            <span class="badge badge-planned">Planned</span>
+            <div class="btn-group">
+              <button class="btn-action btn-edit">Edit</button>
+              <button class="btn-action btn-delete">Delete</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

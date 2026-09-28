@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: min(920px, calc(100% - 28px));
+  margin: 45px auto;
+  display: grid;
+  gap: 20px;
+}
+
+header {
+  padding: 8px 4px;
+}
+
+.eyebrow {
+  color: #315efb;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+}
+
+header p:last-child {
+  color: #667085;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #dce3ed;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(20, 35, 60, 0.07);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #344054;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #d6dce7;
+  border-radius: 9px;
+  font: inherit;
+  background: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  background: #315efb;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #edf0f5;
+  color: #344054;
+}
+
+.toolbar {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.movie-list {
+  display: grid;
+  gap: 10px;
+}
+
+.movie {
+  border: 1px solid #e0e5ed;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+}
+
+.movie h3 {
+  margin: 0 0 4px;
+}
+
+.meta {
+  color: #667085;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4055aa;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 7px;
+  margin-top: 8px;
+
+}
+.movie-actions button {
+  padding: 8px 10px;
+  font-size: 12px;
+}
+
+.movie-actions .delete {
+  background: #fff0f0;
+  color: #c52f38;
+}
+
+.empty {
+  text-align: center;
+  padding: 35px;
+  color: #667085;
+  border: 1px dashed #ccd4e0;
+  border-radius: 12px;
+}
+
+@media (max-width: 650px) {
+  .form-grid,
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+  .movie {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .movie-actions {
+    width: 100%;
+  }
+  .movie-actions button {
+    flex: 1;
+  }
+}

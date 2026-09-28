@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <p class="eyebrow">GitHub Practice Project</p>
+        <h1>Movie Watchlist</h1>
+        <p>
+          Practice CRUD, DOM manipulation and the GitHub Pull Request workflow.
+        </p>
+      </header>
+
+      <section class="panel">
+        <h2>Add / Update Movie</h2>
+        <form id="movieForm">
+          <input type="hidden" id="movieId" />
+          <div class="form-grid">
+            <label
+              >Movie title
+              <input
+                id="title"
+                required
+                maxlength="80"
+                placeholder="e.g. Interstellar"
+              />
+            </label>
+            <label
+              >Genre
+              <input
+                id="genre"
+                required
+                maxlength="40"
+                placeholder="e.g. Sci-Fi"
+              />
+            </label>
+            <label
+              >Release year
+              <input
+                id="year"
+                type="number"
+                min="1888"
+                max="2100"
+                required
+                placeholder="e.g. 2014"
+              />
+            </label>
+            <label
+              >Status
+              <select id="status">
+                <option value="Planned">Planned</option>
+                <option value="Watched">Watched</option>
+              </select>
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit" id="submitButton">Add Movie</button>
+            <button type="button" id="cancelButton" class="secondary" hidden>
+              Cancel Edit
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="Search movies..." />
+          <select id="filter">
+            <option value="All">All statuses</option>
+            <option value="Planned">Planned</option>
+            <option value="Watched">Watched</option>
+          </select>
+        </div>
+        <div id="movieList" class="movie-list"></div>
+      </section>
+    </main>
+  </body>
+</html>

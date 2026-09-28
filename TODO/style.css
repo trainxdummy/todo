@@ -1,0 +1,155 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: #b3e6ff; */
+}
+
+.all{
+    background-color: #b3e6ff;
+    height: 100vh;
+}
+.header{
+    display: flex;
+    min-height: 220px;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 24px;
+    /* position: relative; */
+    /* left: 0; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #e6f7ff;
+    border-radius: 15px;
+}
+
+#yos{
+    width: 100%;
+    font-size: xx-large;
+}
+
+#title{
+    width: 100%;
+    font-size: 70px;
+}
+
+.main{
+    width: 100%;
+    background-color: #b3e6ff;
+    padding: 0 20px 30px;
+    gap: 20px;
+    border-radius: 15px;
+}
+
+#hola{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto 0;
+}
+
+.field{
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #b3e6ff;
+    height: 70px;
+    /* width: auto; */
+
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+.field input{
+    border-radius: 5px;
+    height: 55%;
+    font-size: large;
+}
+
+.field label{
+    font-size: large;
+}
+
+.field select{
+    border-radius: 5px;
+    height: 55%;
+    font-size: large;
+}
+
+
+.hero{
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.list{
+    width: 100%;
+    max-width: 900px;
+    margin: 24px auto 0;
+    gap: 10px;
+}
+
+.list p{
+    font-size: large;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.search input{
+    height: 50px;
+    flex: 1;
+    min-width: 0;
+    font-size: large;
+    border-radius: 10px;
+}
+.search button{
+    height: 50px;
+    width: 170px;
+    flex: 0 0 170px;
+    font-size: large;
+    color: white;
+    background-color: blue;
+    border: 2px lightblue;
+    border-radius: 10px;
+}
+
+.form1{
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #e6f7ff;
+}
+
+
+.form1 button{
+    width: 150px;
+    height: 30px;
+    color: white;
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.form1 p{
+    font-size: x-large;
+}
+
+
+
